@@ -1,0 +1,32 @@
+let numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]; // пример массива
+let element = 5; // пример искомого элемента
+let elementIndex = -1; // переменная для хранения индекса искомого элемента
+
+// цикл сортировки выбором
+for (let i = 0; i < numbers.length - 1; i++) {
+  let minIndex = i;
+  for (let j = i + 1; j < numbers.length; j++) {
+    if (numbers[j] < numbers[minIndex]) {
+      minIndex = j;
+    }
+  }
+  if (minIndex !== i) {
+    let temp = numbers[i];
+    numbers[i] = numbers[minIndex];
+    numbers[minIndex] = temp;
+  }
+}
+
+// цикл поиска индекса элемента
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] === element) {
+    elementIndex = i;
+  }
+}
+
+// вывод результата
+if (elementIndex === -1) {
+  console.log("элемент не найден");
+} else {
+  console.log(`Индекс элемента ${element} равен ${elementIndex}`);
+}

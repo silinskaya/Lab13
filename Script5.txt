@@ -1,0 +1,28 @@
+let Names = [
+ {
+ name: 'Аня',
+ age: 19
+ },
+ {
+ name: 'Ксюша',
+ age: 18
+ },
+ {
+ name: 'Даниил',
+ age: 16
+ }
+];
+
+let  getData = function () {
+    for (let j = 0; j<=Names.length-1; j++){
+    for(let d=0; d<=Names.length-j-2; d++){
+        if(Names[d].age > Names[d+1].age){
+            let nam = Names[d];
+            Names[d] = Names[d+1];
+            Names[d+1]= nam
+        }
+    }
+}
+}
+getData();
+console.log(Names);

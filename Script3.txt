@@ -1,0 +1,14 @@
+let d = prompt("Введите «грязную» зарплату : ");;
+let c = 0;
+let calculateSalary = function () {
+    if (d < 100000){
+        c = d - ((d/100)*45);
+        return c;
+    }
+    else{
+        c = d - ((d/100)*35);
+        return c;
+    }
+};
+calculateSalary();
+alert(c);

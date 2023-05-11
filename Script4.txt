@@ -1,0 +1,29 @@
+let time = prompt("¬ведите врем€ работы : ");
+
+let quick = false;
+let forHour = 1500;
+let price = 0;
+
+let  getPrice = function () {
+    if (quick == true){
+        if(time> 150){
+          price = (time/2)*(forHour-250);
+          return price;
+        }
+        else {
+          price = (time/2)*(forHour*2,5);
+          return price;
+        }
+    }
+    else if(time> 150){
+        price = (time/2)*(forHour-250);
+        return price;
+    }
+    else{
+        price = time*forHour;
+        return price;
+    }
+};
+
+getPrice();
+alert(price);

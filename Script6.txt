@@ -1,0 +1,55 @@
+// Базовая цена
+const basePrice = 1000;
+
+// тех характеристи компьютера и стоимость
+const techSpecs = {
+  cpu: {
+    name: 'CPU',
+    values: {
+      i3: 100,
+      i5: 200,
+      i7: 300
+    }
+  },
+  ram: {
+    name: 'RAM',
+    values: {
+      4: 50,
+      8: 100,
+      16: 200
+    }
+  },
+  hdd: {
+    name: 'HDD',
+    values: {
+      250: 50,
+      500: 100,
+      1000: 200
+    }
+  }
+};
+
+// расчет итоговой стоимости заказа
+function calculateTotalPrice(computer) {
+  let totalPrice = basePrice;
+  
+  // Проходим по всем техническим характеристикам компьютера и добавляем стоимость каждой характеристики к общей цене
+  for (const [spec, value] of Object.entries(computer)) {
+    totalPrice += techSpecs[spec].values[value];
+  }
+  
+  return totalPrice;
+}
+
+// Пример
+const computer = {
+  cpu: 'i7',
+  ram: 16,
+  hdd: 1000
+};
+
+// итог стоимость
+const totalPrice = calculateTotalPrice(computer);
+
+// вывод
+console.log(`Вы заказали компьютер с процессором ${techSpecs.cpu.values[computer.cpu]} ${techSpecs.cpu.name}, оперативной памятью ${techSpecs.ram.values[computer.ram]} ${techSpecs.ram.name} и жестким диском ${techSpecs.hdd.values[computer.hdd]} ${techSpecs.hdd.name}. Итоговая стоимость заказа: ${totalPrice} рублей.`);

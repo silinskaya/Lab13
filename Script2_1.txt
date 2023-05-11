@@ -1,0 +1,15 @@
+let numbers = [1, 2, 1, 4, 1];
+let number = 1;
+let lastIndex = -1;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] === number) {
+    lastIndex = i;
+  }
+}
+
+if (lastIndex !== -1) {
+  alert(`Последний индекс числа ${number} в массиве: ${lastIndex}`);
+} else {
+  alert(`Число ${number} не найдено в массиве`);
+}
